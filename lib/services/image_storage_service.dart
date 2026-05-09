@@ -35,6 +35,7 @@ class ImageStorageService {
 
       return destinationPath;
     } catch (e) {
+      // ignore: avoid_print
       print('Error saving image: $e');
       return null;
     }
@@ -50,6 +51,7 @@ class ImageStorageService {
       }
       return false;
     } catch (e) {
+      // ignore: avoid_print
       print('Error deleting image: $e');
       return false;
     }
@@ -66,6 +68,7 @@ class ImageStorageService {
           .map((file) => file.path)
           .toList();
     } catch (e) {
+      // ignore: avoid_print
       print('Error getting images: $e');
       return [];
     }

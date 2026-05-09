@@ -282,6 +282,7 @@ class _PemilihHomeScreenState extends State<PemilihHomeScreen> {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                   decoration: BoxDecoration(
+                    // ignore: deprecated_member_use
                     color: Colors.white.withOpacity(0.2),
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -428,6 +429,7 @@ class _PemilihHomeScreenState extends State<PemilihHomeScreen> {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
+                // ignore: deprecated_member_use
                 color: color.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(12),
               ),

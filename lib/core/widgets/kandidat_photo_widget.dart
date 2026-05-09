@@ -36,6 +36,7 @@ class KandidatPhotoWidget extends StatelessWidget {
           width: size,
           height: size,
           fit: BoxFit.cover,
+          // ignore: unnecessary_underscores
           errorBuilder: (_, __, ___) => _buildAvatar(),
         ),
       );
@@ -52,6 +53,7 @@ class KandidatPhotoWidget extends StatelessWidget {
             width: size,
             height: size,
             fit: BoxFit.cover,
+            // ignore: unnecessary_underscores
             errorBuilder: (_, __, ___) => _buildAvatar(),
           ),
         );
@@ -64,6 +66,7 @@ class KandidatPhotoWidget extends StatelessWidget {
             width: size,
             height: size,
             fit: BoxFit.cover,
+            // ignore: unnecessary_underscores
             errorBuilder: (_, __, ___) => _buildAvatar(),
           ),
         );
@@ -81,6 +84,7 @@ class KandidatPhotoWidget extends StatelessWidget {
         width: size,
         height: size,
         fit: BoxFit.cover,
+        // ignore: unnecessary_underscores
         errorBuilder: (_, __, ___) => _buildAvatar(),
       ),
     );
