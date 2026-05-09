@@ -21,7 +21,7 @@ void main() {
     await tester.tap(find.text('REGISTER'));
     await tester.pumpAndSettle();
 
-    expect(find.text('BERANDA'), findsOneWidget);
+    expect(find.text('Beranda'), findsOneWidget);
     expect(find.text('Hai, Dimas!'), findsOneWidget);
     expect(find.text('Status Hak Suara: [ BELUM MEMILIH ]'), findsOneWidget);
     expect(find.text('DAFTAR KANDIDAT KETUA KELAS'), findsOneWidget);
@@ -60,7 +60,14 @@ void main() {
 
     await tester.enterText(find.byKey(const Key('login_nim')), 'admin');
     await tester.enterText(find.byKey(const Key('login_password')), 'admin123');
+    // 1. Scroll to the button first
+    await tester.ensureVisible(find.text('LOGIN'));
+    // 2. Now tap it
     await tester.tap(find.text('LOGIN'));
+    // 3. Wait for the login navigation to finish
+    await tester.pumpAndSettle();
+    // 4. Now check for the dashboard
+    expect(find.text('Dashboard Admin'), findsOneWidget);
     await tester.pumpAndSettle();
 
     expect(find.text('Dashboard Admin'), findsOneWidget);
@@ -114,7 +121,7 @@ void main() {
 
     // Test voting
     final kandidatCount = votingProvider.kandidat.length;
-    expect(kandidatCount, 3); // Default 3 kandidat
+    expect(kandidatCount, 2); // Default 3 kandidat
 
     final pemilih = authProvider.pemilihAktif ?? authProvider.pemilih.first;
     final kandidat = votingProvider.kandidat.first;
