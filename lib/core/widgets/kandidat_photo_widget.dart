@@ -27,8 +27,8 @@ class KandidatPhotoWidget extends StatelessWidget {
 
     // Cek apakah asset image (path relatif tanpa 'assets/' atau dengan 'assets/')
     if (path.startsWith('images/') || path.startsWith('assets/images/')) {
-      // Pastikan path tidak mengandung 'assets/' di awal untuk Image.asset
-      final assetPath = path.startsWith('assets/') ? path.substring(7) : path;
+      // Pastikan path mengandung 'assets/' di awal untuk Image.asset
+      final assetPath = path.startsWith('assets/') ? path : 'assets/$path';
       return ClipRRect(
         borderRadius: BorderRadius.circular(8),
         child: Image.asset(
