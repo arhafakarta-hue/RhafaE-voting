@@ -29,10 +29,13 @@ void main() {
     // 1. Find the button
     final detailButton = find.text('Lihat Detail').first;
     
-    // 2. Scroll until the button is visible on the screen
+    // 2. Tell the screen to scroll to the button
     await tester.ensureVisible(detailButton);
     
-    // 3. Now tap it!
+    // 3. WAIT for the scrolling animation to actually finish! (The missing piece)
+    await tester.pumpAndSettle();
+    
+    // 4. Now tap it safely
     await tester.tap(detailButton);
     await tester.pumpAndSettle();
 
