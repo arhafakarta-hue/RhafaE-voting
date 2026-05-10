@@ -26,7 +26,14 @@ void main() {
     expect(find.text('Daftar Kandidat'), findsOneWidget);
 
     // Click the new detail button name
-    await tester.tap(find.text('Lihat Detail').first);
+    // 1. Find the button
+    final detailButton = find.text('Lihat Detail').first;
+    
+    // 2. Scroll until the button is visible on the screen
+    await tester.ensureVisible(detailButton);
+    
+    // 3. Now tap it!
+    await tester.tap(detailButton);
     await tester.pumpAndSettle();
 
     expect(find.text('PROFIL KANDIDAT'), findsOneWidget);
