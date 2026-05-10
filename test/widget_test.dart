@@ -21,12 +21,12 @@ void main() {
     await tester.tap(find.text('REGISTER'));
     await tester.pumpAndSettle();
 
-    expect(find.text('Beranda'), findsOneWidget);
-    expect(find.text('Hai, Dimas!'), findsOneWidget);
-    expect(find.text('Status Hak Suara: [ BELUM MEMILIH ]'), findsOneWidget);
-    expect(find.text('DAFTAR KANDIDAT KETUA KELAS'), findsOneWidget);
+    expect(find.text('Selamat Datang, Dimas!'), findsOneWidget); 
+    expect(find.text('Status: Belum Memilih'), findsOneWidget);
+    expect(find.text('Daftar Kandidat'), findsOneWidget);
 
-    await tester.tap(find.text('[ Lihat Visi & Misi ]').first);
+    // Click the new detail button name
+    await tester.tap(find.text('Lihat Detail').first);
     await tester.pumpAndSettle();
 
     expect(find.text('PROFIL KANDIDAT'), findsOneWidget);
